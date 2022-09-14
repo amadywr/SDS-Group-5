@@ -1,0 +1,169 @@
+public class Main {
+	public static void main(String[] args) {
+		Scanner sc = new Scanner(System.in);
+		SubjectList subjects = new SubjectList();
+		int level;
+		String field;
+		String code;
+		
+		subjects.addSubject("A100", "Maths", 1, "Maths");
+		
+		System.out.println("Please enter your level of study: ");
+		level = sc.nextInt();
+		System.out.println("Please enter your preferred field of study: ");
+		field = "Maths";
+		
+		String recommendedSubject = subjects.recommendSubject(level, field);
+		System.out.println("Your recommended subject is: " + recommendedSubject);
+	}
+}
+
+public class Subject {
+	
+	/*
+	 The subject code is a unique identifier for the subject (primary key)
+	 */
+	String subjectCode;
+	String name;
+	int levelOfStudy;
+	String fieldOfStudy;
+	
+	public Subject(String a, String x, int y, String z) {
+		subjectCode = a;
+		name = x;
+		levelOfStudy = y;
+		fieldOfStudy = z;
+	}
+	
+	public String getSubjectCode() {
+		return this.subjectCode;
+	}
+	
+	public String getSubjectName() {
+		return this.name;
+	}
+	
+	public String getSubjectField() {
+		return this.fieldOfStudy;
+	}
+	
+	public int getSubjectLevel() {
+		return this.levelOfStudy;
+	}
+	
+	public boolean subject(String code) {
+		return code.equals(this.subjectCode);
+	}
+}
+
+import java.util.ArrayList;
+import java.util.Scanner;
+
+public class SubjectList {
+	public ArrayList<Subject> subjects = new ArrayList<Subject>();
+	public Scanner sc = new Scanner(System.in);
+	
+	public SubjectList() {
+	}
+	
+	//returns a subject based on the subject code
+	public Subject getSubject(String code) {
+		for (Subject subject : subjects) {
+			if(subject.subject(code)) {
+				return subject;
+			}
+		}
+		return null;
+	}
+	
+	//return a subject based on the subject level
+	public String getSubjectLevel(int level) {
+		for (Subject subject : subjects) {
+			if(subject.getSubjectLevel() == level) {
+				return subject.getSubjectCode();
+			}
+		}
+		return null;
+	}
+	
+	//return a subject based on the subject field
+	public String getSubjectField(String field) {
+		for (Subject subject : subjects) {
+			if(subject.getSubjectField().equals(field)) {
+				return subject.getSubjectCode();
+			}
+		}
+		return null;
+	}
+	
+	//return a subject based on study level and preferred field
+	public String recommendSubject(int level, String field) {
+		for (Subject subject : subjects) {
+			if(subject.getSubjectLevel() == level && subject.getSubjectField().equals(field)) {
+				return subject.getSubjectCode();
+			}
+		}
+		return null;
+	}
+	
+	//add a subject by inputting code, name, field and level
+	public void addSubject() {
+		System.out.println("Enter the subject code: ");
+		String code = sc.nextLine();
+		System.out.println("Enter the name of the subject: ");
+		String name = sc.nextLine();
+		System.out.println("Enter the field of the subject: ");
+		String field = sc.nextLine();
+		System.out.println("Enter the level of study for the subject: ");
+		int level = sc.nextInt();
+		subjects.add(new Subject(code, name, level, field));
+	}
+	
+	//alternate way to add subject
+	public void addSubject(String code, String name, int level, String field) {
+		subjects.add(new Subject(code, name, level, field));
+	}
+	
+	//delete a subject based on subject code
+	public void deleteSubject() {
+		String code = sc.nextLine();
+		if (getSubject(code) != null) {
+			for (Subject subject : subjects) {
+				if (subject.getSubjectCode().equals(code)){
+					subjects.remove(subject);
+					System.out.println("The subject " + code + " has been deleted");
+					break;
+				}
+			}
+		}
+		else System.out.println("Error: The subject " + code + "does not exist");
+	}
+		
+	//update a subject based on subject code
+	public void updateSubject() {
+		System.out.println("Enter the subject code for the subject you wish to update: ");
+		String code = sc.nextLine();
+		System.out.println("Enter the new subject name: ");
+		String name = sc.nextLine();
+		System.out.println("Enter the new field of study for the subject: ");
+		String field = sc.nextLine();
+		System.out.println("Enter the new level of study for the subject: ");
+		int level = sc.nextInt();
+		
+		int a = subjects.indexOf(getSubject(code));
+		
+		if(getSubject(code) != null) {
+			for (Subject subject : subjects) {
+				if (subject.getSubjectCode().equals(code)){
+					subjects.set(a, new Subject(code, name, level, field));
+				}
+			}
+		}
+		else System.out.println("Error: The subject " + code + "does not exist");
+	}
+	
+	//gives the number of total subjects
+	public int subjectsCount() {
+		return subjects.size();
+	}
+}
