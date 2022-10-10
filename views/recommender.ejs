@@ -1,0 +1,39 @@
+<% layout('layout')%> <% layout('layout')%>
+
+<section class="course-recommender-section">
+  <header class="cr-header">
+    <a href="/" class="cr-logo container">UTS</a>
+  </header>
+
+  <div>
+    <div class="rc-top-div container">
+      <h1>Course Recommender</h1>
+      <input type="text" placeholder="Search Course" />
+    </div>
+
+    <div class="rc-bottom-div container">
+      <div class="rc-poi">
+        <h1>Points of interest</h1>
+        <p>
+          Pick any titles from area of interest and our program will recommend
+          courses that best suits you
+        </p>
+      </div>
+    </div>
+
+    <hr class="rc-line" />
+
+    <form accept="/recommender" method="post" class="cr-form container">
+      <div class="rc-form-checkbox">
+        <input type="checkbox" id="law" name="law" value="law" />
+        <label for="law">Law</label>
+      </div>
+      <div class="rc-form-checkbox">
+        <input type="checkbox" id="medicine" name="medicine" value="medicine" />
+        <label for="medicine">Medicine</label>
+      </div>
+
+      <input type="submit" value="SUBMIT" class="primary-btn rc-form-submit" />
+    </form>
+  </div>
+</section>
