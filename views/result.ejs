@@ -5,9 +5,11 @@
   </header>
   <div class="container">
     <h1>We recommend the following courses &darr;</h1>
-    
-    <% for(let i=0; i<recommendedCourses.length; i++){ %>
-        <p><%= recommendedCourses[i] %></p>
+    <ul>
+        <% for(let i=0; i<recommendedCourses.length; i++){ %>
+            <li><%= recommendedCourses[i] %></li>
         <% } %>
+    </ul>
+    
   </div>
 </div>

@@ -11,6 +11,8 @@ app.set('views', path.join(__dirname, 'views'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, 'public')))
 
+const courses = ['english', 'maths', 'IT']
+
 app.get('/', (req, res) => {
   res.render('homepage')
 })
@@ -20,7 +22,7 @@ app.get('/login', (req, res) => {
 })
 
 app.get('/recommender', (req, res) => {
-  res.render('recommender')
+  res.render('recommender', { courses })
 })
 
 app.post('/recommender', (req, res) => {

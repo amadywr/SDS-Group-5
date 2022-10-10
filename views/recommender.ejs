@@ -80,6 +80,22 @@
         />
         <label for="economics">Economics</label>
       </div>
+      <!-- //////////// -->
+
+      <% for(let i=0; i<courses.length; i++){ %>
+        <div class="rc-form-checkbox">
+          <input
+            type="checkbox"
+            id="<%= courses[i] %>"
+            name="<%= courses[i] %>"
+            value="<%= courses[i] %>"
+          />
+          <label for="<%= courses[i] %>"><%= courses[i] %></label>
+        </div>
+      <% } %>
+
+      
+      <!-- //////////// -->
 
       <input type="submit" value="SUBMIT" class="primary-btn rc-form-submit" />
     </form>
