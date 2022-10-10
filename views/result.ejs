@@ -1,1 +1,13 @@
-<% layout('layout')%> <% layout('layout')%>
+<% layout('layout')%>
+<div>
+  <header class="login-header">
+    <a href="/" class="login-logo container">UTS</a>
+  </header>
+  <div class="container">
+    <h1>We recommend the following courses &darr;</h1>
+    
+    <% for(let i=0; i<recommendedCourses.length; i++){ %>
+        <p><%= recommendedCourses[i] %></p>
+        <% } %>
+  </div>
+</div>
