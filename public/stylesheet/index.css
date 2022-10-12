@@ -57,7 +57,7 @@ body {
   font-size: 100px;
   text-decoration: none;
   color: #000;
-  margin-top: 20px;
+  /* margin-top: 20px; */
   margin-left: 100px;
 }
 
@@ -217,47 +217,13 @@ body {
   cursor: pointer;
 }
 
-/* .rc-poi {
-  grid-column-start: 1;
-  grid-column-end: 4;
+.rc-poi {
+  margin: 20px auto 40px auto;
 }
 
-.rc-interest-list {
-  grid-column-start: 4;
-  background-color: #ccc;
-  border-radius: 20px;
-  padding: 20px;
-  min-height: 60vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
+.rc-study-level {
+  margin: 20px auto 20px auto;
 }
-
-.rc-interest-list h1 {
-  border-bottom: 5px solid #000;
-  padding-bottom: 5px;
-} */
-
-/* .rc-interest-list-buttons {
-  display: flex;
-  justify-content: space-between;
-}
-
-.rc-interest-list-buttons button {
-  background-color: #000;
-  border: none;
-  color: #fff;
-  font-size: 20px;
-  padding: 10px 20px;
-  border-radius: 20px;
-}
-
-.rc-interest-list-buttons button:hover {
-  cursor: pointer;
-  background: none;
-  box-shadow: inset 0px 0px 0px 3px #000000;
-  color: #000;
-} */
 
 .cr-form {
   margin-top: 10px;
@@ -275,4 +241,10 @@ body {
   position: absolute;
   bottom: 50px;
   width: 80%;
+}
+
+/* /////////// RESULT /////////// */
+
+.result-title {
+  margin: 30px auto;
 }

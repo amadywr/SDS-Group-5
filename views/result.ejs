@@ -4,12 +4,15 @@
     <a href="/" class="login-logo container">UTS</a>
   </header>
   <div class="container">
-    <h1>We recommend the following courses &darr;</h1>
+    <h2 class="result-title">We recommend the following courses for you</h2>
     <ul>
         <% for(let i=0; i<recommendedCourses.length; i++){ %>
             <li><%= recommendedCourses[i] %></li>
         <% } %>
     </ul>
     
+    <a href="/recommender" class="primary-btn">Change Preferences</a>
+    <a href="/" class="primary-btn">Homepage</a>
+
   </div>
 </div>

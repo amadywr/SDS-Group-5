@@ -1,6 +1,7 @@
 const express = require('express')
 const path = require('path')
 const ejsMate = require('ejs-mate')
+const courseRecommender = require('./courseRecommender')
 
 const app = express()
 const port = 3000
@@ -11,10 +12,26 @@ app.set('views', path.join(__dirname, 'views'))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, 'public')))
 
-const courses = ['english', 'maths', 'IT']
+const fields = [
+  'Maths',
+  'IT',
+  'Medicine',
+  'Anthropology',
+  'History',
+  'Law',
+  'Languages',
+  'Philosophy',
+  'Religion',
+  'Economics',
+  'Art',
+]
 
 app.get('/', (req, res) => {
   res.render('homepage')
+})
+
+app.get('/register', (req, res) => {
+  res.render('register')
 })
 
 app.get('/login', (req, res) => {
@@ -22,18 +39,16 @@ app.get('/login', (req, res) => {
 })
 
 app.get('/recommender', (req, res) => {
-  res.render('recommender', { courses })
+  res.render('recommender', { fields })
 })
 
 app.post('/recommender', (req, res) => {
   const userSelection = Object.values(req.body)
-  console.log(userSelection)
+  console.log(req.body)
 
-  if (userSelection.includes('medicine')) {
-    console.log('we recommond nursing')
-  }
+  // console.log('from func: ', courseRecommender(userSelection))
 
-  res.render('result', { recommendedCourses: userSelection })
+  res.render('result', { recommendedCourses: courseRecommender(userSelection) })
 })
 
 app.listen(port, () => {
