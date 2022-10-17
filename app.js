@@ -11,6 +11,10 @@ app.set("views", path.join(__dirname, "views"))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, "public")))
 
+app.get("/", (req, res) => {
+  res.render("homepage")
+})
+
 app.listen(port, () => {
   console.log(`Example app listening on port ${port}`)
 })

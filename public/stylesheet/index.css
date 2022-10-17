@@ -32,3 +32,63 @@ body {
   color: #000;
   background: none;
 }
+
+/***************** HOMEPAGE ******************/
+
+.homepage-section {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.homepage-right-img {
+  width: 100%;
+  height: 100vh;
+}
+
+.homepage-header {
+  border-bottom: 5px solid #000;
+  display: flex;
+  align-items: center;
+  height: 20vh;
+}
+
+.homepage-logo:link,
+.homepage-logo:visited {
+  font-size: 100px;
+  text-decoration: none;
+  color: #000;
+  /* margin-top: 20px; */
+  margin-left: 100px;
+}
+
+.homepage-logins {
+  display: flex;
+  flex-direction: column;
+  margin-left: 100px;
+  justify-content: center;
+  height: 80vh;
+  gap: 80px;
+}
+
+.homepage-logins a:link,
+.homepage-logins a:visited {
+  text-decoration: none;
+  background-color: #000;
+  color: #fff;
+  font-size: 18px;
+  padding: 10px 20px;
+  display: inline-block;
+  border-radius: 20px;
+  margin-top: 10px;
+}
+
+.homepage-logins a:hover,
+.homepage-logins a:active {
+  box-shadow: inset 0px 0px 0px 3px #000000;
+  color: #000;
+  background: none;
+}
+
+.homepage-logins p {
+  font-size: 18px;
+}
