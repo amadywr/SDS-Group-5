@@ -42,8 +42,6 @@ app.post("/preference", (req, res) => {
   const userSelection = Object.values(req.body)
   console.log(req.body)
 
-  // console.log('from func: ', courseRecommender(userSelection))
-
   res.render("recommendation", {
     recommendedCourses: recommender(userSelection),
   })
