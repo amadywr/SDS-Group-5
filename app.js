@@ -1,6 +1,7 @@
 const express = require("express")
 const path = require("path")
 const ejsMate = require("ejs-mate")
+const recommender = require("./recommender")
 
 const app = express()
 const port = 3000
@@ -44,7 +45,7 @@ app.post("/preference", (req, res) => {
   // console.log('from func: ', courseRecommender(userSelection))
 
   res.render("recommendation", {
-    recommendedCourses: ["a", "b"],
+    recommendedCourses: recommender(userSelection),
   })
 })
 
