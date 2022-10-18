@@ -11,12 +11,41 @@ app.set("views", path.join(__dirname, "views"))
 app.use(express.urlencoded({ extended: true }))
 app.use(express.static(path.join(__dirname, "public")))
 
+const fields = [
+  "Maths",
+  "IT",
+  "Medicine",
+  "Anthropology",
+  "History",
+  "Law",
+  "Languages",
+  "Philosophy",
+  "Religion",
+  "Economics",
+  "Art",
+]
+
 app.get("/", (req, res) => {
   res.render("homepage")
 })
 
 app.get("/login", (req, res) => {
   res.render("login")
+})
+
+app.get("/preference", (req, res) => {
+  res.render("preference", { fields })
+})
+
+app.post("/preference", (req, res) => {
+  const userSelection = Object.values(req.body)
+  console.log(req.body)
+
+  // console.log('from func: ', courseRecommender(userSelection))
+
+  res.render("recommendation", {
+    recommendedCourses: ["a", "b"],
+  })
 })
 
 app.listen(port, () => {

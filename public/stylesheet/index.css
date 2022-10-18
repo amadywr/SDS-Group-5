@@ -155,3 +155,96 @@ body {
   background: none;
   cursor: pointer;
 }
+
+/***************** PREFERENCE *****************/
+
+.cr-header {
+  border-bottom: 5px solid #000;
+  display: flex;
+  align-items: center;
+}
+
+.cr-logo:link,
+.cr-logo:visited {
+  color: #000;
+  text-decoration: none;
+  font-size: 100px;
+}
+
+.rc-line {
+  border: none;
+  border-bottom: 5px solid #000;
+}
+
+.rc-top-div {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 15px 0;
+}
+
+.rc-top-div input {
+  background-color: #ccc;
+  border-radius: 20px;
+  border: none;
+  padding: 20px;
+  font-size: 18px;
+}
+
+.rc-bottom-div {
+  padding: 15px 0;
+  /* display: grid;
+  grid-template-columns: repeat(4, 1fr); */
+}
+
+.rc-poi h1 {
+  margin-bottom: 10px;
+}
+
+.rc-poi-buttons-div {
+  margin: 10px 0;
+}
+
+.rc-poi-buttons {
+  background: none;
+  text-decoration: underline;
+  border: none;
+  font-size: 16px;
+  margin: 5px;
+}
+
+.rc-poi-buttons:hover {
+  cursor: pointer;
+}
+
+.rc-poi {
+  margin: 20px auto 40px auto;
+}
+
+.rc-study-level {
+  margin: 20px auto 20px auto;
+}
+
+.cr-form {
+  margin-top: 10px;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+}
+
+.rc-form-checkbox {
+  display: flex;
+  gap: 10px;
+  font-size: 20px;
+}
+
+.rc-form-submit {
+  position: absolute;
+  bottom: 50px;
+  width: 80%;
+}
+
+/* /////////// RESULT /////////// */
+
+.result-title {
+  margin: 30px auto;
+}
