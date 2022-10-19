@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@100;200;300;400;500;600;700;800;900&display=swap');
 
 * {
   margin: 0;
@@ -7,7 +7,7 @@
 }
 
 body {
-  font-family: "Montserrat", sans-serif;
+  font-family: 'Montserrat', sans-serif;
 }
 
 .container {
@@ -247,4 +247,64 @@ body {
 
 .result-title {
   margin: 30px auto;
+}
+
+/* /////////// DASHBOARD /////////// */
+
+.dash-header {
+  height: 20vh;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 100px;
+}
+
+.dash-logo:link,
+.dash-logo:visited {
+  text-decoration: none;
+  color: #000;
+}
+
+.subjects-section {
+  padding: 50px 0;
+}
+
+.subject {
+  width: 200px;
+  height: 150px;
+  border: 2px solid black;
+  padding: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-evenly;
+}
+
+.subject-name {
+  font-size: 40px;
+}
+
+.subject-btn {
+  text-decoration: none;
+  background-color: #000;
+  color: #fff;
+  font-size: 15px;
+  padding: 5px 8px;
+  display: inline-block;
+  border-radius: 20px;
+  /* margin-top: 10px; */
+  border: none;
+}
+
+.subject-btn:hover {
+  box-shadow: inset 0px 0px 0px 3px #000000;
+  color: #000;
+  background: none;
+}
+
+.dash-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 20px 0;
 }

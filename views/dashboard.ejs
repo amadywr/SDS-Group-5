@@ -1,0 +1,27 @@
+<% layout('layout')%>
+
+<header class="dash-header container">
+  <a href="/" class="dash-logo">UTS</a>
+  <a href="/login" class="primary-btn">Logout</a>
+</header>
+
+<hr class="rc-line" />
+
+<!-- <h1 class="container">Admin Dashboard</h1> -->
+
+<div class="container dash-title">
+  <h1>Admin's Dashboard <%= user.name %></h1>
+  <a href="/addSubject?id=<%=user._id%>" class="primary-btn">Add Subject</a>
+</div>
+
+<hr class="rc-line" />
+
+<section class="container subjects-section">
+  <div class="subject">
+    <h4 class="subject-name">MATHS</h4>
+    <div>
+      <a href="/dashboard" class="subject-btn">Update</a>
+      <a href="/dashboard" class="subject-btn">Remove</a>
+    </div>
+  </div>
+</section>
