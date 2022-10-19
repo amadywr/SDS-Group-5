@@ -5,9 +5,15 @@
     <a href="/" class="login-logo container">UTS</a>
   </header>
   <div class="login-div">
-    <form action="/login" method="post">
+    <form action="/register" method="post">
       <fieldset class="login-form">
-        <legend><h1>Admin Login</h1></legend>
+        <legend><h1>Admin Register</h1></legend>
+
+        <div class="login-control">
+          <label for="name">Name</label>
+          <input type="name" name="name" placeholder="Name" />
+        </div>
+
         <div class="login-control">
           <label for="email">Email</label>
           <input type="email" name="email" placeholder="Email" />
@@ -15,10 +21,10 @@
 
         <div class="login-control">
           <label for="password">Password</label>
-          <input type="password" name="pasasword" placeholder="Password" />
+          <input type="password" name="password" placeholder="Password" />
         </div>
 
-        <input type="submit" value="Login" class="login-submit" />
+        <input type="submit" value="Register" class="login-submit" />
       </fieldset>
     </form>
   </div>
